@@ -81,7 +81,7 @@ style "button"
   bg [NORMAL] = @bg_color
   bg [PRELIGHT] = lighter (@bg_color)
   bg [ACTIVE] = shade (0.95,@bg_color)
-  bg [INSENSITIVE] = shade (0.8,@bg_color)
+  bg [INSENSITIVE] = shade (0.95,@bg_color)
 	fg [INSENSITIVE] = shade (1.2,@fg_color)
 
   GtkButton::child-displacement-x = 1
@@ -130,6 +130,8 @@ style "entry"
 
 }
 class "GtkEntry" style "entry"
+
+
 
 style "checkbutton"
 {
@@ -263,8 +265,15 @@ widget_class "*.GtkTreeView*" style "treeview"
 style "menu"
 {
   GtkMenu::vertical_padding = 0
-  bg[NORMAL] = @toolbar_bg
-  fg[NORMAL] = @toolbar_fg
+  bg [NORMAL] = @toolbar_bg
+  fg [NORMAL] = @toolbar_fg
+  
+  text [NORMAL] = @toolbar_fg
+  text [PRELIGHT] = @selected_fg_color
+  text [SELECTED] = @selected_fg_color
+  text [ACTIVE] = @toolbar_fg
+  text [INSENSITIVE] = shade (0.3, @toolbar_fg)
+  
   engine "moblin-netbook-engine"
   {
     radius = 0
@@ -503,6 +512,7 @@ class "GtkArrow" style "arrow"
 
 style "combo-box-entry-arrow"
 {
+
   fg[PRELIGHT] = shade (2.5, @fg_color)
   fg[ACTIVE] = shade (2.5, @fg_color)
 }
@@ -576,6 +586,16 @@ style "combobox" = "button"
 {
   xthickness = 4
   ythickness = 4
+
+  #GtkComboBox::arrow-scaling = 0.4 #FIXME not working
+
+  bg [NORMAL] = @base_color
+  text [NORMAL] = @text_color
+  engine "moblin-netbook-engine" 
+  {
+  	shadow = 0.0
+  	radius = 4
+  }
 }
 widget_class "*Combo*"  style "combobox"
 
@@ -740,3 +760,15 @@ style "bold-panel-item" {
 widget "*Panel*MenuBar*" style "bold-panel-item"
 widget "*gimmie*" style "bold-panel-item"
 widget "*clock-applet-button*" style "bold-panel-item"
+
+#FIXME gedit has a weird combobox widget
+style "gedit-entry" = "entry"
+{
+  engine "moblin-netbook-engine"
+  {
+    radius = 3
+    shadow = 0.15
+  }
+
+}
+class "*GtkHistoryEntry*GtkEntry*" style "gedit-entry"
