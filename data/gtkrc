@@ -1,6 +1,6 @@
 # openSUSE Moblin Netbook GTK+ theme
 
-gtk_color_scheme = "bg_color:#f9f9f9;fg_color:#2b2b2b;text_color:#2b2b2b;base_color:#fff;selected_bg_color:#5E7F3E;selected_fg_color:#fff;grey:#8d8d8d;tint_l:#6E8F4E;tint:#5E7F3E;tint_d:#4E6F2E;toolbar_fg:#ffffff;toolbar_bg:#202E31;"
+gtk_color_scheme = "bg_color:#e2e2e2;fg_color:#2b2b2b;text_color:#2b2b2b;base_color:#fff;selected_bg_color:#5E7F3E;selected_fg_color:#fff;grey:#8d8d8d;tint_l:#6E8F4E;tint:#5E7F3E;tint_d:#4E6F2E;toolbar_fg:#ffffff;toolbar_bg:#202E31;"
 
 gtk-enable-mnemonics = 0
 gtk_button_images = 0
@@ -78,10 +78,11 @@ style "button"
   # allow for bottom shadow in buttons
   GtkButton::inner-border = { 0, 0, 0, 2 }
 
-  bg [NORMAL] = "#ffffff"
-  bg [PRELIGHT] = "#ffffff"
-  bg [ACTIVE] = "#ffffff"
-  bg [INSENSITIVE] = "#f1f1f1"
+  bg [NORMAL] = @bg_color
+  bg [PRELIGHT] = lighter (@bg_color)
+  bg [ACTIVE] = shade (0.95,@bg_color)
+  bg [INSENSITIVE] = shade (0.8,@bg_color)
+	fg [INSENSITIVE] = shade (1.2,@fg_color)
 
   GtkButton::child-displacement-x = 1
   GtkButton::child-displacement-y = 1
