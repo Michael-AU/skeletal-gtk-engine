@@ -298,15 +298,15 @@ widget_class "*MenuItem*" style "menuitem"
 
 style "menu-separator"
 {
-  
-  
+  #this doesn't do a bloody thing. I hate gtk theming.
+
   engine "moblin-netbook-engine"
   {
-    border[NORMAL] = lighter (@toolbar_bg) #this doesn't seem to work at all
+    border[NORMAL] = @toolbar_bg
   }
 }
 widget_class "*Menu*.*Sepa*"  style "menu-separator"
-
+widget_class "*<GtkSeparatorMenuItem>*" style "menu-separator"
 
 style "toolbar"
 {
