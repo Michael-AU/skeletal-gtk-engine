@@ -73,6 +73,7 @@ style "button"
 {
 
   GtkButton::default_border = {0, 0, 0, 0}
+  GtkButton::arrow-scaling = 0.4
 
   # allow for bottom shadow in buttons
   GtkButton::inner-border = { 0, 0, 0, 2 }
@@ -275,6 +276,7 @@ style "menuitem"
 {
 
   GtkCheckMenuItem::indicator_size = 15
+  GtkMenuItem::arrow-scaling = 0.4
 
   fg[NORMAL] = @toolbar_fg
   bg[NORMAL] = @toolbar_bg
@@ -393,8 +395,13 @@ style "toolbar-button"
 {
   bg[NORMAL] =  lighter (@toolbar_bg)
   bg [PRELIGHT] = lighter (@toolbar_bg)
-  bg [ACTIVE] = lighter (@toolbar_bg)
+  bg [ACTIVE] = @selected_bg_color
   bg [SELECTED] = lighter (@toolbar_bg)
+  fg[NORMAL] = "#ffffff"
+  fg[ACTIVE] = "#ffffff"
+  fg[PRELIGHT] = "#ffffff"
+
+  #not sure when these are used:
   base [PRELIGHT] = lighter (@toolbar_bg)
   base [ACTIVE] = lighter (@toolbar_bg)
   base [SELECTED] = lighter (@toolbar_bg)
@@ -402,18 +409,15 @@ style "toolbar-button"
   text[SELECTED] = "#ffffff"
   text[ACTIVE] = "#ffffff"
   text[PRELIGHT] = "#ffffff"
-  fg[NORMAL] = "#ffffff"
-  fg[ACTIVE] = "#ffffff"
-  fg[PRELIGHT] = "#ffffff"
   engine "moblin-netbook-engine"
   {
     border[NORMAL] = lighter (@toolbar_bg)
     border[PRELIGHT] = lighter (@toolbar_bg)
-    border[ACTIVE] = lighter (@toolbar_bg)
-    radius = 3
+    border[ACTIVE] = @selected_bg_color
+    radius = 5
   }
-  xthickness = 6
-  ythickness = 6
+  xthickness = 5
+  ythickness = 5
 }
 widget_class "*<GtkToolbar>.*utton*"  style "toolbar-button"
 
@@ -448,14 +452,14 @@ widget_class "*Spin*"  style "spinbutton"
 style "toolbar-spinbutton" = "toolbar-button"
 {
   bg[NORMAL] =  lighter (@toolbar_bg)
-  text[NORMAL] = "#ffffff"
-  text[PRELIGHT] = "#ffffff"
-  fg[NORMAL] = "#ffffff" # Arrow colour
-  fg[ACTIVE] = "#ffffff"
-  fg[PRELIGHT] = "#ffffff"
+  text[NORMAL] = @toolbar_fg
+  text[PRELIGHT] = @toolbar_fg
+  fg[NORMAL] = @toolbar_fg # Arrow colour
+  fg[ACTIVE] = @toolbar_fg
+  fg[PRELIGHT] = @toolbar_fg
   base[NORMAL] = lighter (@toolbar_bg)
   base[SELECTED] = @tint
-  text[SELECTED] = "#ffffff"
+  text[SELECTED] = @toolbar_fg
 
   xthickness = 5
   ythickness = 5
@@ -473,8 +477,8 @@ widget_class "*<GtkToolbar>.*Spin*"  style "toolbar-spinbutton"
 
 style "toolbar-togglebutton" = "toolbar-button"
 {
-  fg[NORMAL] = "#ffffff"
-  text[NORMAL] = "#ffffff"
+  fg[NORMAL] = @toolbar_fg
+  text[NORMAL] = @toolbar_fg
   bg[NORMAL] =  lighter (@toolbar_bg)
 
 
@@ -672,3 +676,66 @@ style "tooltip"
 widget_class "*.*tooltips*.*.GtkToggleButton" style "tooltip"
 widget "*.*gtk-tooltips*" style "tooltip"
 widget "*gtk-tooltip*" style "tooltip"
+
+#
+# GNOME Panel (when used as a generic gnome theme)
+#
+
+style "theme-panel" {
+
+	bg[SELECTED] = shade (0.85, @selected_bg_color)
+	bg[NORMAL] = @toolbar_bg
+	bg[PRELIGHT] = shade (0.85, @selected_bg_color)
+	bg[ACTIVE] = shade (0.60, @bg_color) 
+	bg[INSENSITIVE] = "#3C3C3C"
+	fg[NORMAL] = @toolbar_fg
+	fg[PRELIGHT] = @selected_fg_color  # Makes prelighted text colored.
+	fg[SELECTED] = @selected_fg_color  # Makes prelighted text colored.
+	fg[ACTIVE] = @selected_fg_color  # Makes active text colored.
+	fg[INSENSITIVE] = "#666666" # Color for insensitive text.
+
+	text[NORMAL] = "#E6E6E6"
+	text[PRELIGHT] = @selected_fg_color  # Makes prelighted text colored.
+	text[SELECTED] = @selected_fg_color  # Makes prelighted text colored.
+	text[ACTIVE] = @selected_fg_color  # Makes active text colored.
+	text[INSENSITIVE] = "#666666"
+
+	engine "moblin-netbook-engine" {
+		radius = 0
+		border[NORMAL] = shade (0.85, @toolbar_bg)
+	}
+}
+
+widget "*PanelWidget*" style "theme-panel"
+widget "*PanelApplet*" style "theme-panel"
+widget "*fast-user-switch*" style "theme-panel"
+widget "*CPUFreq*Applet*" style "theme-panel"
+class "PanelApp*" style "theme-panel"
+class "PanelToplevel*" style "theme-panel"
+widget_class "*PanelToplevel*" style "theme-panel"
+widget_class "*notif*" style "theme-panel"
+widget_class "*Notif*" style "theme-panel"
+widget_class "*Tray*" style "theme-panel" 
+widget_class "*tray*" style "theme-panel"
+widget_class "*Applet*Tomboy*" style "theme-panel"
+widget_class "*Applet*Netstatus*" style "theme-panel"
+widget "*gdm-user-switch-menubar*" style "theme-panel"
+
+# widget_class "*Mail*" style "theme-panel" # Disabled to fix Evolution bug.
+# class "*Panel*" style "theme-panel" # Disabled to fix bug.
+
+# XFCE panel theming.
+widget "*Xfce*Panel*" style "theme-panel"
+class "*Xfce*Panel*" style "theme-panel"
+
+style "bold-panel-item" {
+	font_name = "Bold"
+
+	engine "moblin-netbook-engine" {
+		radius = 2
+	}
+}
+
+widget "*Panel*MenuBar*" style "bold-panel-item"
+widget "*gimmie*" style "bold-panel-item"
+widget "*clock-applet-button*" style "bold-panel-item"
