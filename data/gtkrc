@@ -369,11 +369,11 @@ widget_class "*.GtkToolbar.*" style "toolbar-child"
 
 style "toolbar-handlebox"
 {
-  bg[NORMAL] = "#434343"
+  bg[NORMAL] = lighter (@toolbar_bg)
   engine "moblin-netbook-engine"
   {
     radius = 3
-    border[NORMAL] = "#434343"
+    border[NORMAL] = lighter (@toolbar_bg)
   }
 }
 class "GtkHandleBox" style "toolbar-handlebox"
@@ -391,13 +391,13 @@ widget_class "*<GtkToolbar>.*GtkArrow*"  style "toolbar-arrow"
 
 style "toolbar-button"
 {
-  bg[NORMAL] =  "#434343"
-  bg [PRELIGHT] = "#434343"
-  bg [ACTIVE] = "#434343"
-  bg [SELECTED] = "#434343"
-  base [PRELIGHT] = "#434343"
-  base [ACTIVE] = "#434343"
-  base [SELECTED] = "#434343"
+  bg[NORMAL] =  lighter (@toolbar_bg)
+  bg [PRELIGHT] = lighter (@toolbar_bg)
+  bg [ACTIVE] = lighter (@toolbar_bg)
+  bg [SELECTED] = lighter (@toolbar_bg)
+  base [PRELIGHT] = lighter (@toolbar_bg)
+  base [ACTIVE] = lighter (@toolbar_bg)
+  base [SELECTED] = lighter (@toolbar_bg)
   text[NORMAL] = "#ffffff"
   text[SELECTED] = "#ffffff"
   text[ACTIVE] = "#ffffff"
@@ -407,9 +407,9 @@ style "toolbar-button"
   fg[PRELIGHT] = "#ffffff"
   engine "moblin-netbook-engine"
   {
-    border[NORMAL] = "#434343"
-    border[PRELIGHT] = "#434343"
-    border[ACTIVE] = "#434343"
+    border[NORMAL] = lighter (@toolbar_bg)
+    border[PRELIGHT] = lighter (@toolbar_bg)
+    border[ACTIVE] = lighter (@toolbar_bg)
     radius = 3
   }
   xthickness = 6
@@ -447,13 +447,13 @@ widget_class "*Spin*"  style "spinbutton"
 
 style "toolbar-spinbutton" = "toolbar-button"
 {
-  bg[NORMAL] =  "#434343"
+  bg[NORMAL] =  lighter (@toolbar_bg)
   text[NORMAL] = "#ffffff"
   text[PRELIGHT] = "#ffffff"
   fg[NORMAL] = "#ffffff" # Arrow colour
   fg[ACTIVE] = "#ffffff"
   fg[PRELIGHT] = "#ffffff"
-  base[NORMAL] = "#434343"
+  base[NORMAL] = lighter (@toolbar_bg)
   base[SELECTED] = @tint
   text[SELECTED] = "#ffffff"
 
@@ -462,9 +462,9 @@ style "toolbar-spinbutton" = "toolbar-button"
 
   engine "moblin-netbook-engine"
   {
-    border[NORMAL] = "#434343"
-    border[PRELIGHT] = "#434343"
-    border[ACTIVE] = "#434343"
+    border[NORMAL] = lighter (@toolbar_bg)
+    border[PRELIGHT] = lighter (@toolbar_bg)
+    border[ACTIVE] = lighter (@toolbar_bg)
     radius = 3
   }
 }
@@ -475,16 +475,16 @@ style "toolbar-togglebutton" = "toolbar-button"
 {
   fg[NORMAL] = "#ffffff"
   text[NORMAL] = "#ffffff"
-  bg[NORMAL] =  "#434343"
+  bg[NORMAL] =  lighter (@toolbar_bg)
 
 
   ythickness = 3
 
   engine "moblin-netbook-engine"
   {
-    border[NORMAL] = "#434343"
-    border[PRELIGHT] = "#434343"
-    border[ACTIVE] = "#434343"
+    border[NORMAL] = lighter (@toolbar_bg)
+    border[PRELIGHT] = lighter (@toolbar_bg)
+    border[ACTIVE] = lighter (@toolbar_bg)
     radius = 3
   }
 }
@@ -577,9 +577,9 @@ widget_class "*Combo*"  style "combobox"
 style "toolbar-combobox"
 {
 
-  bg[NORMAL] = "#434343"
-  bg[PRELIGHT] = "#434343"
-  bg[ACTIVE] = "#434343"
+  bg[NORMAL] = lighter (@toolbar_bg)
+  bg[PRELIGHT] = lighter (@toolbar_bg)
+  bg[ACTIVE] = lighter (@toolbar_bg)
 
   text [NORMAL] = "#ffffff"
   text [PRELIGHT] = "#ffffff"
@@ -595,7 +595,7 @@ style "toolbar-arrow" = "toolbar-button"
 {
   fg[NORMAL] = "#787878"
   fg[PRELIGHT] = "#ffffff"
-  fg[INSENSITIVE] = "#434343"
+  fg[INSENSITIVE] = lighter (@toolbar_bg)
 }
 widget_class "*<GtkToolbar>.*GtkArrow*"  style "toolbar-arrow"
 
