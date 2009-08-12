@@ -302,7 +302,7 @@ style "menuitem"
 
   engine "moblin-netbook-engine"
   {
-    radius = 2
+    radius = 12
     border[NORMAL] = lighter (@toolbar_bg) #menuitems are separators too(gvim)
   }
 
@@ -355,15 +355,11 @@ style "menubar"
 class "GtkMenuBar" style "menubar"
 class "GtkToolbar" style "menubar"
 
-
-
-
-
 style "toolbar-child" = "menubar"
 {
  engine "moblin-netbook-engine"
  {
- radius = 3
+ radius = 0
  shadow = 0.0
  }
 }
