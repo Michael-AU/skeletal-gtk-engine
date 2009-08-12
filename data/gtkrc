@@ -94,7 +94,7 @@ style "button"
 
   engine "moblin-netbook-engine"
   {
-    radius = 3
+    radius = 5
     border[PRELIGHT] = @tint_d
     border[ACTIVE] = @tint_d
     border[INSENSITIVE] = "#d7d9d4"
