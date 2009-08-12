@@ -1,6 +1,6 @@
 # openSUSE Moblin Netbook GTK+ theme
 
-gtk_color_scheme = "bg_color:#f9f9f9;fg_color:#2b2b2b;text_color:#2b2b2b;base_color:#fff;selected_bg_color:#5E7F3E;selected_fg_color:#fff;grey:#8d8d8d;tint_l:#6E8F4E;tint:#5E7F3E;tint_d:#4E6F2E"
+gtk_color_scheme = "bg_color:#f9f9f9;fg_color:#2b2b2b;text_color:#2b2b2b;base_color:#fff;selected_bg_color:#5E7F3E;selected_fg_color:#fff;grey:#8d8d8d;tint_l:#6E8F4E;tint:#5E7F3E;tint_d:#4E6F2E;toolbar_fg:#ffffff;toolbar_bg:#202E31;"
 
 gtk-enable-mnemonics = 0
 gtk_button_images = 0
@@ -155,26 +155,7 @@ widget_class "*RadioButton*" style "checkbutton"
 widget_class "*ToolButton*" style "checkbutton"
 
 
-style "menuitem"
-{
 
-  GtkCheckMenuItem::indicator_size = 15
-
-  fg[PRELIGHT] = @selected_fg_color
-  bg[PRELIGHT] = @tint
-  fg[INSENSITIVE] = "#bbbbbb"
-  base[SELECTED] = @tint
-
-  xthickness = 5
-  ythickness = 5
-
-  engine "moblin-netbook-engine"
-  {
-    radius = 2
-  }
-
-}
-widget_class "*MenuItem*" style "menuitem"
 
 
 style "progressbar"
@@ -280,20 +261,48 @@ widget_class "*.GtkTreeView*" style "treeview"
 style "menu"
 {
   GtkMenu::vertical_padding = 0
-  bg[NORMAL] = lighter (@bg_color)
+  bg[NORMAL] = @toolbar_bg
+  fg[NORMAL] = @toolbar_fg
   engine "moblin-netbook-engine"
   {
     radius = 0
+    border[NORMAL] = @toolbar_bg
   }
 }
 class "GtkMenu" style "menu"
 
+style "menuitem"
+{
+
+  GtkCheckMenuItem::indicator_size = 15
+
+  fg[NORMAL] = @toolbar_fg
+  bg[NORMAL] = @toolbar_bg
+  fg[PRELIGHT] = @selected_fg_color
+  fg[INSENSITIVE] = "#bbbbbb"
+ 
+  #selected items bg:
+  base[SELECTED] = @selected_bg_color
+  bg[PRELIGHT] = @selected_bg_color
+ 
+  xthickness = 5
+  ythickness = 5
+
+  engine "moblin-netbook-engine"
+  {
+    radius = 2
+  }
+
+}
+widget_class "*MenuItem*" style "menuitem"
 
 style "menu-separator"
 {
+  
+  
   engine "moblin-netbook-engine"
   {
-    border[NORMAL] = "#dddddd"
+    border[NORMAL] = lighter (@toolbar_bg) #this doesn't seem to work at all
   }
 }
 widget_class "*Menu*.*Sepa*"  style "menu-separator"
@@ -305,12 +314,13 @@ style "toolbar"
   GtkToolbar::internal_padding = 4
   GtkToolbar::shadow_type = GTK_SHADOW_NONE
 
-  bg[NORMAL] = "#202E31"
-  text [NORMAL] = "#ffffff"
-  base [NORMAL] = "#ffffff"
+  bg[NORMAL] = @toolbar_bg
+  text [NORMAL] = @toolbar_fg
+  base [NORMAL] = @toolbar_fg
   engine "moblin-netbook-engine"
   {
     radius = 0
+    border[NORMAL] = @toolbar_bg
   }
 }
 class "GtkToolbar" style "toolbar"
@@ -318,16 +328,16 @@ class "GtkToolbar" style "toolbar"
 
 
 
-
 style "menubar"
 {
-  bg[NORMAL] = "#202e31"
-  fg[NORMAL] = "#ffffff"
+  bg[NORMAL] = @toolbar_bg
+  fg[NORMAL] = @toolbar_fg
   GtkMenuBar::shadow_type = GTK_SHADOW_NONE
 
   engine "moblin-netbook-engine"
   {
     radius = 0
+    border[NORMAL] = @toolbar_bg
   }
 }
 class "GtkMenuBar" style "menubar"
@@ -607,7 +617,7 @@ style "toolbar-separator"
 {
   engine "moblin-netbook-engine"
   {
-    border[NORMAL] = "#434343"
+    border[NORMAL] = lighter (@toolbar_bg)
   }
 }
 widget_class "*<GtkToolbar>.*eparator*"  style "toolbar-separator"
