@@ -123,7 +123,7 @@ style "entry"
   engine "moblin-netbook-engine"
   {
     radius = 3
-    shadow = 0.15
+    shadow = 0.0
   }
 
 }
