@@ -291,6 +291,7 @@ style "menuitem"
   engine "moblin-netbook-engine"
   {
     radius = 2
+    border[NORMAL] = lighter (@toolbar_bg) #menuitems are separators too(gvim)
   }
 
 }
@@ -298,15 +299,14 @@ widget_class "*MenuItem*" style "menuitem"
 
 style "menu-separator"
 {
-  #this doesn't do a bloody thing. I hate gtk theming.
-
-  engine "moblin-netbook-engine"
+   engine "moblin-netbook-engine"
   {
-    border[NORMAL] = @toolbar_bg
+    radius = 2
+    border[NORMAL] = lighter (@toolbar_bg) #menuitems are separators too(gvim)
   }
 }
 widget_class "*Menu*.*Sepa*"  style "menu-separator"
-widget_class "*<GtkSeparatorMenuItem>*" style "menu-separator"
+widget_class "*GtkSeparatorMenuItem*" style "menu-separator"
 
 style "toolbar"
 {
@@ -598,18 +598,6 @@ style "toolbar-arrow" = "toolbar-button"
   fg[INSENSITIVE] = "#434343"
 }
 widget_class "*<GtkToolbar>.*GtkArrow*"  style "toolbar-arrow"
-
-
-
-style "separator"
-{
-  engine "moblin-netbook-engine"
-  {
-    border[NORMAL] = "#dddddd"
-    radius = 3
-  }
-}
-widget_class "*Separator*"  style "separator"
 
 
 
