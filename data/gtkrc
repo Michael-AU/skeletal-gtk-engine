@@ -78,8 +78,8 @@ style "button"
   # allow for bottom shadow in buttons
   GtkButton::inner-border = { 0, 0, 0, 2 }
 
-  bg [NORMAL] = @bg_color
-  bg [PRELIGHT] = lighter (@bg_color)
+  bg [NORMAL] = lighter (@bg_color)
+  bg [PRELIGHT] = mix (0.8, "#ffffff", @selected_bg_color)
   bg [ACTIVE] = shade (0.95,@bg_color)
   bg [INSENSITIVE] = shade (0.95,@bg_color)
 	fg [INSENSITIVE] = shade (1.2,@fg_color)
@@ -302,7 +302,7 @@ style "menuitem"
 
   engine "moblin-netbook-engine"
   {
-    radius = 12
+    radius = 3
     border[NORMAL] = lighter (@toolbar_bg) #menuitems are separators too(gvim)
   }
 
