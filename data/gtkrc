@@ -1,6 +1,6 @@
-# Moblin Netbook GTK+ theme
+# openSUSE Moblin Netbook GTK+ theme
 
-gtk_color_scheme = "bg_color:#f9f9f9;fg_color:#2b2b2b;text_color:#2b2b2b;base_color:#fff;selected_bg_color:#a0e4f8;selected_fg_color:#fff;grey:#8d8d8d;blue_l:#a0e4f8;blue:#5dcff2;blue_d:#009bce"
+gtk_color_scheme = "bg_color:#f9f9f9;fg_color:#2b2b2b;text_color:#2b2b2b;base_color:#fff;selected_bg_color:#5E7F3E;selected_fg_color:#fff;grey:#8d8d8d;tint_l:#6E8F4E;tint:#5E7F3E;tint_d:#4E6F2E"
 
 gtk-enable-mnemonics = 0
 gtk_button_images = 0
@@ -13,7 +13,7 @@ style "default"
 
   GtkWidget::link_color = "#febf00"
   GtkWidget::visited_link_color = "#febf00"
-  GtkWidget::cursor-color    = @blue_d
+  GtkWidget::cursor-color    = @tint_d
   GtkWidget::secondary-cursor-color = "#febf00"
   GtkWidget::focus-padding = 0
   GtkWidget::focus-line-width = 2
@@ -58,9 +58,9 @@ style "default"
   {
     radius = 3
     border[NORMAL] = @grey
-    border[PRELIGHT] = @blue_d
-    border[SELECTED] = @blue_d
-    border[ACTIVE] = @blue_d
+    border[PRELIGHT] = @tint_d
+    border[SELECTED] = @tint_d
+    border[ACTIVE] = @tint_d
     border[INSENSITIVE] = "#d7d9d4"
   }
 
@@ -93,8 +93,8 @@ style "button"
   engine "moblin-netbook-engine"
   {
     radius = 3
-    border[PRELIGHT] = @blue_d
-    border[ACTIVE] = @blue_d
+    border[PRELIGHT] = @tint_d
+    border[ACTIVE] = @tint_d
     border[INSENSITIVE] = "#d7d9d4"
     shadow = 0.15
   }
@@ -104,9 +104,9 @@ widget_class "*Button*" style "button"
 
 style "nautilus-icon-container"
 {
-  base[SELECTED] = @blue
-  NautilusIconContainer::selection_box_color = @blue_l
-  NautilusIconContainer::dark_info_color = @blue_d
+  base[SELECTED] = @tint
+  NautilusIconContainer::selection_box_color = @tint_l
+  NautilusIconContainer::dark_info_color = @tint_d
   NautilusIconContainer::prelight_icon_color = "#000000"
   NautilusIconContainer::prelight_icon_brightness = 150
 }
@@ -134,7 +134,7 @@ style "checkbutton"
 
   GtkCheckButton::indicator_size = 15
 
-  base[SELECTED] = @blue
+  base[SELECTED] = @tint
   fg [NORMAL] = @fg_color
   fg [PRELIGHT] = @fg_color
   fg [ACTIVE] = @fg_color
@@ -144,8 +144,8 @@ style "checkbutton"
   {
     radius = 2
     shadow = 0.0
-    border[PRELIGHT] = @blue_d
-    border[SELECTED] = @blue_d
+    border[PRELIGHT] = @tint_d
+    border[SELECTED] = @tint_d
   }
 
 }
@@ -161,9 +161,9 @@ style "menuitem"
   GtkCheckMenuItem::indicator_size = 15
 
   fg[PRELIGHT] = @selected_fg_color
-  bg[PRELIGHT] = @blue
+  bg[PRELIGHT] = @tint
   fg[INSENSITIVE] = "#bbbbbb"
-  base[SELECTED] = @blue
+  base[SELECTED] = @tint
 
   xthickness = 5
   ythickness = 5
@@ -186,7 +186,7 @@ style "progressbar"
   xthickness = 0
   ythickness = 0
   bg[NORMAL] = shade (0.9, @bg_color)
-  bg[PRELIGHT] = @blue
+  bg[PRELIGHT] = @tint
 }
 class "GtkProgressBar" style "progressbar"
 
@@ -201,8 +201,8 @@ style "scrollbar"
 
   fg [NORMAL] = @grey
   fg [INSENSITIVE] = @grey
-  fg [PRELIGHT] = @blue_d
-  fg [ACTIVE] = @blue_d
+  fg [PRELIGHT] = @tint_d
+  fg [ACTIVE] = @tint_d
 
   # stepper colours
   bg [ACTIVE] = @bg_color
@@ -214,9 +214,9 @@ style "scrollbar"
   engine "moblin-netbook-engine"
   {
     radius = 3
-    border[PRELIGHT] = @blue_d
+    border[PRELIGHT] = @tint_d
     border[INSENSITIVE] = @grey
-    border[ACTIVE] = @blue_d
+    border[ACTIVE] = @tint_d
   }
 }
 class "GtkScrollbar" style "scrollbar"
@@ -254,7 +254,7 @@ style "scale"
   engine "moblin-netbook-engine"
   {
     radius = 3
-    border[PRELIGHT] = @blue_d
+    border[PRELIGHT] = @tint_d
   }
 }
 class "GtkScale" style "scale"
@@ -414,11 +414,11 @@ style "spinbutton" = "button"
   text[NORMAL] = @fg_color
   text[PRELIGHT] = "#ffffff"
   fg[NORMAL] = @grey # Arrow colour
-  fg[ACTIVE] = @blue
-  fg[PRELIGHT] = @blue
+  fg[ACTIVE] = @tint
+  fg[PRELIGHT] = @tint
   base[NORMAL] = "#ffffff"
   text[SELECTED] = "#ffffff"
-  base[SELECTED] = @blue
+  base[SELECTED] = @tint
 
   xthickness = 5
   ythickness = 5
@@ -444,7 +444,7 @@ style "toolbar-spinbutton" = "toolbar-button"
   fg[ACTIVE] = "#ffffff"
   fg[PRELIGHT] = "#ffffff"
   base[NORMAL] = "#434343"
-  base[SELECTED] = @blue
+  base[SELECTED] = @tint
   text[SELECTED] = "#ffffff"
 
   xthickness = 5
