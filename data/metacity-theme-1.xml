@@ -51,7 +51,7 @@
 </frame_geometry>
 
 <!-- button inside padding -->
-<constant name="ButtonIPad" value="7"/>
+<constant name="ButtonIPad" value="10"/>
 
 <draw_ops name="focus_outline">
   <rectangle color="#182325"
