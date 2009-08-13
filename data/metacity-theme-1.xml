@@ -113,8 +113,7 @@
 
 <!-- Buttons -->
 
-<!-- we only care about a close icon -->
-
+<!-- Close Icon -->
 <draw_ops name="close_button_icon">
   <clip x="ButtonIPad" y="ButtonIPad" width="width-(ButtonIPad*2)+1" height="height-(ButtonIPad*2)+1" />
 	  <line color="gtk:bg[NORMAL]" width="3" x1="0" y1="0" x2="width" y2="height"/>
@@ -134,7 +133,7 @@
 	  <line color="blend/gtk:bg[SELECTED]/#ffffff/0.4" width="3" x1="0" y1="height" x2="width" y2="0"/>
 </draw_ops>
 
-
+<!-- Close Button -->
 
 <draw_ops name="close_button_normal">
    <include name="close_button_icon"/>
@@ -149,6 +148,41 @@
   <include name="close_button_icon_unfocused"/>
 </draw_ops>
 
+<!-- Maximize Icon -->
+<draw_ops name="maximize_button_icon">
+  <clip x="ButtonIPad" y="ButtonIPad" width="width-(ButtonIPad*2)+1" height="height-(ButtonIPad*2)+1" />
+	  <line color="gtk:bg[NORMAL]" width="3" x1="0" y1="0" x2="width" y2="height"/>
+	  <line color="gtk:bg[NORMAL]" width="3" x1="0" y1="height" x2="width" y2="0"/>
+
+</draw_ops>
+
+<draw_ops name="maximize_button_icon_unfocused">
+  <clip x="ButtonIPad+1" y="ButtonIPad+1" width="width-(ButtonIPad*2+1)" height="height-(ButtonIPad*2+1)" />
+	  <line color="gtk:fg[INSENSITIVE]" width="2" x1="0" y1="0" x2="width" y2="height"/>
+	  <line color="gtk:fg[INSENSITIVE]" width="2" x1="0" y1="height" x2="width" y2="0"/>
+</draw_ops>
+
+<draw_ops name="maximize_button_icon_prelight">
+  <clip x="ButtonIPad" y="ButtonIPad" width="width-(ButtonIPad*2)+1" height="height-(ButtonIPad*2)+1" />
+	  <line color="blend/gtk:bg[SELECTED]/#ffffff/0.4" width="3" x1="0" y1="0" x2="width" y2="height"/>
+	  <line color="blend/gtk:bg[SELECTED]/#ffffff/0.4" width="3" x1="0" y1="height" x2="width" y2="0"/>
+</draw_ops>
+
+<!-- Maximize Button -->
+<draw_ops name="maximize_button_normal">
+   <include name="maximize_button_icon"/>
+</draw_ops>
+<draw_ops name="maximize_button_prelight">
+   <include name="maximize_button_icon_prelight"/>
+</draw_ops>
+<draw_ops name="maximize_button_pressed">
+  <include name="maximize_button_icon_unfocused"/>
+</draw_ops>
+<draw_ops name="maximize_button_unfocused">
+  <include name="maximize_button_icon_unfocused"/>
+</draw_ops>
+
+
 <draw_ops name="blank">
 <!-- nothing -->
 </draw_ops>
@@ -158,8 +192,8 @@
   <piece position="title" draw_ops="title_text_unfocused"/>
   <button function="close" state="normal" draw_ops="close_button_unfocused"/>
   <button function="close" state="pressed" draw_ops="close_button_pressed"/>
-  <button function="maximize" state="normal" draw_ops="blank"/>
-  <button function="maximize" state="pressed" draw_ops="blank"/>
+  <button function="maximize" state="normal" draw_ops="maximize_button_unfocused"/>
+  <button function="maximize" state="pressed" draw_ops="maximize_button_pressed"/>
   <button function="minimize" state="normal" draw_ops="blank"/>
   <button function="minimize" state="pressed" draw_ops="blank"/>
   <button function="menu" state="normal" draw_ops="blank"/>
@@ -171,6 +205,8 @@
   <piece position="title" draw_ops="title_text"/>
   <button function="close" state="normal" draw_ops="close_button_normal"/>
   <button function="close" state="prelight" draw_ops="close_button_prelight"/>
+  <button function="maximize" state="normal" draw_ops="maximize_button_normal"/>
+  <button function="maximize" state="prelight" draw_ops="maximize_button_prelight"/>
 </frame_style>
 
 <frame_style name="normal_maximized" geometry="normal_maximized">
