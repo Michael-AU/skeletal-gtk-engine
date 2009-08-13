@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <metacity_theme>
 <info>
-  <name>Moblin Netbook</name>
-  <author>Intel</author>
-  <copyright>&#194; Intel</copyright>
+  <name>openSUSE Moblin</name>
+  <author>Jakub Steiner, Intel</author>
+  <copyright>&#194; 2002 Ximian, Inc., &#194; 2008-2009 Intel, &#194; 2009 Novell, Inc.</copyright>
   <date>Jan 2008</date>
-  <description>Theme for Moblin Netbooks</description>
+  <description>Default theme for Moblin Netbooks</description>
   <!-- Based on the Mist theme by Dave Camp, Copyright 2002 Ximian, Inc -->
 </info>
  
@@ -51,7 +51,7 @@
 </frame_geometry>
 
 <!-- button inside padding -->
-<constant name="ButtonIPad" value="4"/>
+<constant name="ButtonIPad" value="7"/>
 
 <draw_ops name="focus_outline">
   <rectangle color="#182325"
@@ -116,36 +116,32 @@
 <!-- we only care about a close icon -->
 
 <draw_ops name="close_button_icon">
-  <line color="#bbbbbb" width="2"
-        x1="ButtonIPad" y1="ButtonIPad" x2="width-ButtonIPad-1" y2="height - ButtonIPad-1"/>
-  <line color="#bbbbbb" width="1"
-        x1="ButtonIPad" y1="ButtonIPad" x2="width-ButtonIPad" y2="height - ButtonIPad"/>
-  <line color="#bbbbbb" width="2"
-        x1="ButtonIPad" y1="height - ButtonIPad-1" x2="width-ButtonIPad-1" y2="ButtonIPad"/>
-  <line color="#bbbbbb" width="1"
-        x1="ButtonIPad" y1="height - ButtonIPad-1" x2="width-ButtonIPad" y2="ButtonIPad - 1"/>
+
+  <line color="gtk:bg[NORMAL]" width="3" x1="ButtonIPad" y1="ButtonIPad" x2="width-ButtonIPad" y2="height-ButtonIPad"/>
+  <line color="gtk:bg[NORMAL]" width="1" x1="width-ButtonIPad-1" y1="height-ButtonIPad+1" 
+  		x2="width-ButtonIPad+2" y2="height-ButtonIPad-2"/>
+  <line color="gtk:bg[NORMAL]" width="3" x1="ButtonIPad" y1="height-ButtonIPad" x2="width-ButtonIPad" y2="0+ButtonIPad"/>
+  <line color="gtk:bg[NORMAL]" width="1" x1="width-ButtonIPad-1" y1="ButtonIPad-1" 
+  		x2="width-ButtonIPad+2" y2="ButtonIPad+2"/>  
+
 </draw_ops>
 
 <draw_ops name="close_button_icon_unfocused">
-  <line color="#666666" width="2"
-        x1="ButtonIPad" y1="ButtonIPad" x2="width-ButtonIPad-1" y2="height - ButtonIPad-1"/>
-  <line color="#666666" width="1"
-        x1="ButtonIPad" y1="ButtonIPad" x2="width-ButtonIPad" y2="height - ButtonIPad"/>
-  <line color="#666666" width="2"
-        x1="ButtonIPad" y1="height - ButtonIPad-1" x2="width-ButtonIPad-1" y2="ButtonIPad"/>
-  <line color="#666666" width="1"
-        x1="ButtonIPad" y1="height - ButtonIPad-1" x2="width-ButtonIPad" y2="ButtonIPad - 1"/>
+  <line color="gtk:fg[INSENSITIVE]" width="2"
+        x1="ButtonIPad+2" y1="ButtonIPad+2" x2="width-ButtonIPad-2" y2="height-ButtonIPad-2"/>
+  <line color="green" width="1" x1="" y1="" x2="" y2="" />
+  <line color="gtk:fg[INSENSITIVE]" width="2"
+        x1="ButtonIPad+2" y1="height-ButtonIPad-2" x2="width-ButtonIPad-2" y2="0+ButtonIPad+2"/>
 </draw_ops>
 
 <draw_ops name="close_button_icon_prelight">
-  <line color="#ffffff" width="2"
-        x1="ButtonIPad" y1="ButtonIPad" x2="width-ButtonIPad-1" y2="height - ButtonIPad-1"/>
-  <line color="#ffffff" width="1"
-        x1="ButtonIPad" y1="ButtonIPad" x2="width-ButtonIPad" y2="height - ButtonIPad"/>
-  <line color="#ffffff" width="2"
-        x1="ButtonIPad" y1="height - ButtonIPad-1" x2="width-ButtonIPad-1" y2="ButtonIPad"/>
-  <line color="#ffffff" width="1"
-        x1="ButtonIPad" y1="height - ButtonIPad-1" x2="width-ButtonIPad" y2="ButtonIPad - 1"/>
+  <line color="blend/gtk:bg[SELECTED]/#ffffff/.5" width="3" x1="ButtonIPad" y1="ButtonIPad" x2="width-ButtonIPad" y2="height-ButtonIPad"/>
+  <line color="blend/gtk:bg[SELECTED]/#ffffff/.5" width="1" x1="width-ButtonIPad-1" y1="height-ButtonIPad+1" 
+  		x2="width-ButtonIPad+2" y2="height-ButtonIPad-2"/>
+  <line color="blend/gtk:bg[SELECTED]/#ffffff/.5" width="3" x1="ButtonIPad" y1="height-ButtonIPad" x2="width-ButtonIPad" y2="0+ButtonIPad"/>
+  <line color="blend/gtk:bg[SELECTED]/#ffffff/.5" width="1" x1="width-ButtonIPad-1" y1="ButtonIPad-1" 
+  		x2="width-ButtonIPad+2" y2="ButtonIPad+2"/> 
+
 </draw_ops>
 
 <draw_ops name="close_button_normal">
