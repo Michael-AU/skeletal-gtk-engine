@@ -116,33 +116,25 @@
 <!-- we only care about a close icon -->
 
 <draw_ops name="close_button_icon">
-
-  <line color="gtk:bg[NORMAL]" width="3" x1="ButtonIPad" y1="ButtonIPad" x2="width-ButtonIPad" y2="height-ButtonIPad"/>
-  <line color="gtk:bg[NORMAL]" width="1" x1="width-ButtonIPad-1" y1="height-ButtonIPad+1" 
-  		x2="width-ButtonIPad+2" y2="height-ButtonIPad-2"/>
-  <line color="gtk:bg[NORMAL]" width="3" x1="ButtonIPad" y1="height-ButtonIPad" x2="width-ButtonIPad" y2="0+ButtonIPad"/>
-  <line color="gtk:bg[NORMAL]" width="1" x1="width-ButtonIPad-1" y1="ButtonIPad-1" 
-  		x2="width-ButtonIPad+2" y2="ButtonIPad+2"/>  
+  <clip x="ButtonIPad" y="ButtonIPad" width="width-(ButtonIPad*2)+1" height="height-(ButtonIPad*2)+1" />
+	  <line color="gtk:bg[NORMAL]" width="3" x1="0" y1="0" x2="width" y2="height"/>
+	  <line color="gtk:bg[NORMAL]" width="3" x1="0" y1="height" x2="width" y2="0"/>
 
 </draw_ops>
 
 <draw_ops name="close_button_icon_unfocused">
-  <line color="gtk:fg[INSENSITIVE]" width="2"
-        x1="ButtonIPad+2" y1="ButtonIPad+2" x2="width-ButtonIPad-2" y2="height-ButtonIPad-2"/>
-  <line color="green" width="1" x1="" y1="" x2="" y2="" />
-  <line color="gtk:fg[INSENSITIVE]" width="2"
-        x1="ButtonIPad+2" y1="height-ButtonIPad-2" x2="width-ButtonIPad-2" y2="0+ButtonIPad+2"/>
+  <clip x="ButtonIPad+1" y="ButtonIPad+1" width="width-(ButtonIPad*2+1)" height="height-(ButtonIPad*2+1)" />
+	  <line color="gtk:fg[INSENSITIVE]" width="2" x1="0" y1="0" x2="width" y2="height"/>
+	  <line color="gtk:fg[INSENSITIVE]" width="2" x1="0" y1="height" x2="width" y2="0"/>
 </draw_ops>
 
 <draw_ops name="close_button_icon_prelight">
-  <line color="blend/gtk:bg[SELECTED]/#ffffff/.5" width="3" x1="ButtonIPad" y1="ButtonIPad" x2="width-ButtonIPad" y2="height-ButtonIPad"/>
-  <line color="blend/gtk:bg[SELECTED]/#ffffff/.5" width="1" x1="width-ButtonIPad-1" y1="height-ButtonIPad+1" 
-  		x2="width-ButtonIPad+2" y2="height-ButtonIPad-2"/>
-  <line color="blend/gtk:bg[SELECTED]/#ffffff/.5" width="3" x1="ButtonIPad" y1="height-ButtonIPad" x2="width-ButtonIPad" y2="0+ButtonIPad"/>
-  <line color="blend/gtk:bg[SELECTED]/#ffffff/.5" width="1" x1="width-ButtonIPad-1" y1="ButtonIPad-1" 
-  		x2="width-ButtonIPad+2" y2="ButtonIPad+2"/> 
-
+  <clip x="ButtonIPad" y="ButtonIPad" width="width-(ButtonIPad*2)+1" height="height-(ButtonIPad*2)+1" />
+	  <line color="blend/gtk:bg[SELECTED]/#ffffff/0.4" width="3" x1="0" y1="0" x2="width" y2="height"/>
+	  <line color="blend/gtk:bg[SELECTED]/#ffffff/0.4" width="3" x1="0" y1="height" x2="width" y2="0"/>
 </draw_ops>
+
+
 
 <draw_ops name="close_button_normal">
    <include name="close_button_icon"/>
