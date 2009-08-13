@@ -134,8 +134,9 @@
    <include name="close_button_icon"/>
 </draw_ops>
 <draw_ops name="close_button_prelight">
-	<rectangle color="blend/gtk:fg[INSENSITIVE]/#182325/0.8" x="1" y="1" width="width-1" height="height-2" filled="true"/>
-	<rectangle color="blend/gtk:fg[INSENSITIVE]/#182325/0.8" x="2" y="0" width="width-3" height="height" filled="true"/>
+	<rectangle color="blend/gtk:fg[INSENSITIVE]/#182325/0.8" x="1" y="3" width="width-1" height="height-(2*3)" filled="true"/>
+	<rectangle color="blend/gtk:fg[INSENSITIVE]/#182325/0.8" x="4" y="0" width="width-(1+2*3)" height="height" filled="true"/>
+	<rectangle color="blend/gtk:fg[INSENSITIVE]/#182325/0.8" x="1+1" y="1" width="width-3" height="height-2" filled="true"/>
   <include name="close_button_icon"/>
 </draw_ops>
 <draw_ops name="close_button_pressed">
