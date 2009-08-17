@@ -205,7 +205,7 @@ style "scrollbar"
   {
     radius = 3
     border[PRELIGHT] = @tint_d
-    border[INSENSITIVE] = @grey
+    border[INSENSITIVE] = lighter (@grey)
     border[ACTIVE] = @tint_d
   }
 }
