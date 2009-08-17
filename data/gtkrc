@@ -75,9 +75,6 @@ style "button"
   GtkButton::default_border = {0, 0, 0, 0}
   GtkButton::arrow-scaling = 0.4
 
-  # allow for bottom shadow in buttons
-  GtkButton::inner-border = { 0, 0, 0, 2 }
-
   bg [NORMAL] = lighter (@bg_color)
   bg [PRELIGHT] = mix (0.8, "#ffffff", @selected_bg_color)
   bg [ACTIVE] = shade (0.95,@bg_color)
@@ -113,8 +110,6 @@ style "nautilus-icon-container"
   NautilusIconContainer::prelight_icon_brightness = 150
 }
 class "NautilusIconContainer" style "nautilus-icon-container"
-
-
 
 style "entry"
 {
@@ -431,6 +426,26 @@ style "toolbar-button"
   ythickness = 5
 }
 widget_class "*<GtkToolbar>.*utton*"  style "toolbar-button"
+
+style "pathbar" = "toolbar-button"
+{
+	font_name = "Droid Sans 8"
+	
+	xthickness = 2
+  ythickness = 1
+ 
+  GtkButton::inner-border = { 0, 0, 0, 0 }
+  
+  engine "moblin-netbook-engine"
+  {
+    radius = 3
+  }
+}
+
+widget "*NautilusPathBar*Button*" style "pathbar"
+widget "*NautilusNavigationWindow*GtkToolItem*GtkToggleButton*" style "pathbar"
+
+
 
 
 
