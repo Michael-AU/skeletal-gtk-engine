@@ -533,15 +533,15 @@ style "clearlooks-text-is-fg-color-workaround"
 }
 widget_class "*.<GtkComboBox>.<GtkCellView>"   style "clearlooks-text-is-fg-color-workaround"
 
-style "clearlooks-menuitem-text-is-fg-color-workaround"
+style "menuitem-text-is-fg-color-workaround"
 {
-  text[NORMAL]        = @fg_color
+  text[NORMAL]        = @toolbar_fg
   text[PRELIGHT]      = @selected_fg_color
   text[SELECTED]      = @selected_fg_color
-  text[ACTIVE]        = @fg_color
-  text[INSENSITIVE]   = darker (@bg_color)
+  text[ACTIVE]        = @toolbar_fg
+  text[INSENSITIVE]   = darker (@toolbar_bg)
 }
-widget "*.gtk-combobox-popup-menu.*"   style "clearlooks-menuitem-text-is-fg-color-workaround"
+widget "*.gtk-combobox-popup-menu.*"   style "menuitem-text-is-fg-color-workaround"
 
 
 style "notebook"
