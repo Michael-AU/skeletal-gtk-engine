@@ -551,6 +551,7 @@ widget "*.gtk-combobox-popup-menu.*"   style "menuitem-text-is-fg-color-workarou
 
 style "notebook"
 {
+	bg [NORMAL] = @bg_color
 
   GtkNotebook::tab-overlap = 6
   GtkNotebook::tab-curvature = 9
@@ -637,10 +638,10 @@ style "toolbar-separator"
 widget_class "*<GtkToolbar>.*eparator*"  style "toolbar-separator"
 
 
-
+#why is this set?
 style "window"
 {
-  bg [NORMAL] = "#f9f9f9"
+  bg [NORMAL] = @bg_color
 }
 widget_class "GtkWindow" style "window"
 
