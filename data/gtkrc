@@ -154,7 +154,7 @@ style "checkbutton"
     border[PRELIGHT] = @tint_d
     border[SELECTED] = @tint_d
     border[INSENSITIVE] = lighter (@tint_d)
-
+  }
 }
 
 widget_class "*CheckButton*" style "checkbutton"
