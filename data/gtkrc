@@ -185,16 +185,18 @@ style "scrollbar"
   GtkScrollbar::min-slider-length = 64
 
   fg [NORMAL] = @grey
-  fg [INSENSITIVE] = @grey
+  fg [INSENSITIVE] = lighter (@grey)
   fg [PRELIGHT] = @tint_d
   fg [ACTIVE] = @tint_d
 
   # stepper colours
-  bg [ACTIVE] = @bg_color
+  bg [ACTIVE] = lighter (@bg_color)
+  bg [NORMAL] = lighter (@bg_color)
+  bg [PRELIGHT] = lighter (@bg_color)
   bg [INSENSITIVE] = @bg_color
 
   # trough color
-  base [ACTIVE] = "#e5e5e5"
+  base [ACTIVE] = shade (0.9, @bg_color)
 
   engine "moblin-netbook-engine"
   {
