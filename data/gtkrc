@@ -571,8 +571,8 @@ style "notebook"
   GtkNotebook::tab-overlap = 6
   GtkNotebook::tab-curvature = 9
   GtkNotebook::focus-line-width = 0
-  ythickness = 4
-  xthickness = 7
+  ythickness = 3
+  xthickness = 8
 
   engine "moblin-netbook-engine"
   {
