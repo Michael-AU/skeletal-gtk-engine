@@ -6,6 +6,9 @@ gtk-enable-mnemonics = 0
 gtk_button_images = 0
 gtk_menu_images = 0
 
+#redefining icon sizes
+gtk-icon-sizes = "gtk-menu=12,12:panel-menu=12,12:panel=12,12:gtk-button=12,12:gtk-large-toolbar=24,24"
+
 style "default"
 {
 
