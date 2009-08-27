@@ -765,6 +765,9 @@ widget "*gdm-user-switch-menubar*" style "theme-panel"
 # widget_class "*Mail*" style "theme-panel" # Disabled to fix Evolution bug.
 # class "*Panel*" style "theme-panel" # Disabled to fix bug.
 
+#Banshee uses toolbar widget for status
+widget "*__gtksharp_10_Nereid_PlayerInterface*GtkEventBox*" style "default"
+
 # XFCE panel theming.
 widget "*Xfce*Panel*" style "theme-panel"
 class "*Xfce*Panel*" style "theme-panel"
