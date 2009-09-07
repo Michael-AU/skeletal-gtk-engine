@@ -12,8 +12,6 @@ gtk-icon-sizes = "gtk-menu=12,12:panel-menu=12,12:panel=12,12:gtk-button=12,12:g
 style "default"
 {
 
-  font_name = "Droid Sans 9"
-
   GtkWidget::link_color = "#febf00"
   GtkWidget::visited_link_color = "#febf00"
   GtkWidget::cursor-color    = @tint_d
