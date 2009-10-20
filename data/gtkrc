@@ -1,6 +1,6 @@
 # openSUSE Moblin Netbook GTK+ theme
 
-gtk_color_scheme = "bg_color:#e2e2e2;fg_color:#2b2b2b;text_color:#2b2b2b;base_color:#fff;selected_bg_color:#5E7F3E;selected_fg_color:#fff;grey:#8d8d8d;tint_l:#6E8F4E;tint:#5E7F3E;tint_d:#4E6F2E;toolbar_fg:#ffffff;toolbar_bg:#202E31;"
+gtk_color_scheme = "bg_color:#e2e2e2;fg_color:#2b2b2b;text_color:#2b2b2b;base_color:#fff;selected_bg_color:#5E7F3E;selected_fg_color:#fff;grey:#8d8d8d;tint_l:#6E8F4E;tint:#5E7F3E;tint_d:#4E6F2E;toolbar_fg:#ffffff;toolbar_bg:#202E31;tooltip_bg_color:#F5F5B5\ntooltip_fg_color:#000;"
 
 gtk-enable-mnemonics = 0
 gtk_button_images = 0
@@ -691,35 +691,25 @@ widget_class "*<GtkStatusbar>*" style "statusbar"
 
 
 
-style "tooltip"
-{
+style "tooltip" = "default" {
   xthickness = 9
   ythickness = 9
 
   font_name = "Droid Sans Bold 9"
 
-  text[NORMAL]        = "#ffffff"
-  text[PRELIGHT]      = "#ffffff"
-  text[SELECTED]      = "#ffffff"
-  text[ACTIVE]        = "#ffffff"
-  text[INSENSITIVE]   = "#ffffff"
+  bg[NORMAL] = @tooltip_bg_color
+  fg[NORMAL] = @tooltip_fg_color
 
-  bg[NORMAL]          = "#182325"
-  base[NORMAL]        = "#00ff00"
-  fg[NORMAL]          = "#ffffff"
-
-  bg[ACTIVE]          = "#182325"
-  base[ACTIVE]        = "#0000ff"
-  fg[ACTIVE]          = "#ffffff"
-
-  bg[SELECTED]        = "#182325"
-  base[SELECTED]      = "#0000ff"
-  fg[SELECTED]        = "#00ff00"
-
+  engine "moblin-netbook-engine"
+  {
+	border[NORMAL] = shade (0.85, @tooltip_bg_color)
+  }
 }
+
 widget_class "*.*tooltips*.*.GtkToggleButton" style "tooltip"
 widget "*.*gtk-tooltips*" style "tooltip"
 widget "*gtk-tooltip*" style "tooltip"
+widget "*EvMessageArea*" style "tooltip"
 
 #
 # GNOME Panel (when used as a generic gnome theme)
